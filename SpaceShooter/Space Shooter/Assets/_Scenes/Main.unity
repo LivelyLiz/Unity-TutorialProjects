@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4494998, g: 0.49649584, b: 0.55914414, a: 1}
+  m_IndirectSpecularColor: {r: 0.44949985, g: 0.4964956, b: 0.559144, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 611004844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150, y: 420, z: 0}
+  m_LocalPosition: {x: 273, y: 336.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911236109}
@@ -797,8 +797,10 @@ MonoBehaviour:
   SpawnWait: 0.5
   StarWait: 2
   WaveWait: 5
-  HazardCount: 11
-  Hazard: {fileID: 1966792664367614, guid: 686189f7701cae14ca73eb6876b9b2b7, type: 2}
+  HazardCount: 5
+  Hazards:
+  - {fileID: 1966792664367614, guid: 686189f7701cae14ca73eb6876b9b2b7, type: 2}
+  - {fileID: 1835169302381254, guid: 2ddd6be85e4224e448ecc8e276db07f1, type: 2}
 --- !u!4 &889935459
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,7 +1048,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1600669263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -180, y: 420, z: 0}
+  m_LocalPosition: {x: -303, y: 336.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911236109}
@@ -1178,7 +1180,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1911236105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300, y: 450, z: 0}
+  m_LocalPosition: {x: 423, y: 366.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1600669264}

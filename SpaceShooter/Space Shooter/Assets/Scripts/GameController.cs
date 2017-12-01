@@ -14,11 +14,12 @@ public class GameController : MonoBehaviour
     public float StarWait;
     public float WaveWait;
     public int HazardCount;
-    public GameObject Hazard;
+    public GameObject[] Hazards;
 
     private int score;
     private bool gameOver;
     private bool restart;
+    private int spawnShipCountdown;
 
     void Start()
     {
@@ -31,6 +32,8 @@ public class GameController : MonoBehaviour
 
         RestartText.text = "";
         GameOverText.text = "";
+
+        spawnShipCountdown = 4;
     }
 
     void Update()
@@ -62,17 +65,28 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(StarWait);
 
+        int hazardIndex = 0;
+
         while (true)
         {
+            hazardIndex = 0;
+
+            if (spawnShipCountdown % 5 == 0 && Hazards.Length > 1)
+            {
+                hazardIndex = 1;
+                spawnShipCountdown = 4;
+            }
+
             for (int i = 0; i < HazardCount; i++)
             {
                 Vector3 spawnPosition = new Vector3(Random.Range(-SpawnValue.x, SpawnValue.x), SpawnValue.y, SpawnValue.z + Random.Range(i, 10));
-                Quaternion spawnRotation = Quaternion.identity;
+                Quaternion spawnRotation = Quaternion.AngleAxis(180.0f, Vector3.up);
 
-                Instantiate(Hazard, spawnPosition, spawnRotation);
+                Instantiate(Hazards[hazardIndex], spawnPosition, spawnRotation);
 
                 yield return new WaitForSeconds(SpawnWait);
             }
+            spawnShipCountdown -= 1;
 
             yield return new WaitForSeconds(WaveWait);
 
